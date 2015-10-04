@@ -1,0 +1,37 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+.column-setting {
+  width: 100%;
+}
+
+.column-setting .buttons {
+  float: right;
+}
+
+.column-setting:first-of-type .up {
+  visibility: hidden;
+}
+
+.column-setting:last-of-type .down {
+  visibility: hidden;
+}
+
+.removeable .remove {
+  visibility: hidden;
+  float: left;
+}
+
+.removeable:hover .remove {
+  visibility: visible;
+}
+
+.moveable .move {
+  visibility: hidden;
+}
+
+.moveable:hover .move {
+  visibility: visible;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit filters</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <div class="container">
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="index">
+    <h1>Debts: <small>{{name}}</small></h1>
+    <div class="col-md-6">{{render "debts-from" debtsFrom}}</div>
+    <div class="col-md-6">{{render "debts-to" debtsTo}}</div>
+  </script>
+  
+  <script type="text/x-handlebars" id="debts-from">
+      <legend>I Owe People</legend>
+      <div>
+        {{#each ...
+      </div>
+  </script>
+  
+  <script type="text/x-handlebars" id="debts-to">
+      <legend>People Owe Me</legend>
+      <div>
+      </div>
+  </script>
+
+  <!--
+  <script type="text/x-handlebars" id="column-settings">
+    <div>
+      <legend>Columns</legend>
+      {{#each orderedColumnsWithDrag itemController="columnSetting"}}
+        {{#view "columnSetting" tagName="div" classNames="column-setting removeable moveable" classNameBindings="isDragging:bg-primary"}}
+          <a {{action "remove" this}} class="remove"><span class="glyphicon glyphicon-remove"></span></a>
+          <label>{{cattribute.name}}</label>
+          <div class="buttons">
+            <a draggable="true" class="move"><span class="glyphicon glyphicon-move"></span></a>
+            <a {{action "moveUp" this}} class="up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <a {{action "moveDown" this}} class="down"><span class="glyphicon glyphicon-chevron-down"></span></a>
+          </div>
+        {{/view}}
+      {{/each}}
+
+      {{cattribute-picker cattributes=availableColumns title="Available Columns" controllerAddAction="add"}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="filter-settings">
+    <div class="form-horizontal">
+      <legend>Filters</legend>
+      {{#each}}
+        <div class="filter-setting removeable form-group">
+          <label class="col-xs-6 control-label">
+            <a class="remove" {{action "remove" this}}>
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+            {{cattribute.name}}:
+          </label>
+          <span class="col-xs-6">
+            {{input type="text" class="form-control" value=value}}
+          </span>
+        </div>
+      {{/each}}
+
+      {{cattribute-picker cattributes=availableFilters title="Available Filters" controllerAddAction="add"}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="sort-settings">
+    <div class="form-horizontal">
+      <legend>Sorting</legend>
+      {{#each}}
+        <div>
+          <label class="col-xs-6 control-label">
+            <a class="remove" {{action "remove" this}}>
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+            {{cattribute.name}}
+          </label>
+        </div>
+      {{/each}}
+
+      {{cattribute-picker cattributes=availableFilters title="Available Sorting" controllerAddAction="add"}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="components/cattribute-picker">
+    <div>
+      <legend>{{title}}</legend>
+      <table>
+        {{#each cattributes}}
+          <div>
+            <a {{action "add" this}}><span class="glyphicon glyphicon-plus" ></span></a>
+            {{name}}
+          </div>
+        {{/each}}
+      </table>
+    </div>
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-v1.3.0.js"></script>
+  <!- - to activate the test runner, add the "?test" query string parameter - ->
+  <script src="tests/runner.js"></script>
+  -->
+  <script src="js/ember.js"></script>
+  <script src="js/ember-data.js"></script>
+  <script src="js/client.js"></script>
+</body>
+</html>
